@@ -22,6 +22,24 @@ class FractionSuite extends munit.FunSuite {
     assertEquals(obtained, expected)
   }
 
+  test("toFraction String extension method negative whole number") {
+    val obtained = "-1".toFraction
+    val expected = Fraction(-1, 1)
+    assertEquals(obtained, expected)
+  }
+
+  test("toFraction String extension method negative fraction only") {
+    val obtained = "-1/2".toFraction
+    val expected = Fraction(-1, 2)
+    assertEquals(obtained, expected)
+  }
+
+  test("toFraction String extension method negative mixed number") {
+    val obtained = "-3_3/4".toFraction
+    val expected = Fraction(-15, 4)
+    assertEquals(obtained, expected)
+  }
+
   test("can multiply") {
     val a = Fraction(1, 2)
     val b = Fraction(3, 4)
