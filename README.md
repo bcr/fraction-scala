@@ -19,6 +19,17 @@ Example run
 = 3_1/2
 ```
 
+## Somewhat Tricky Things
+
+* I added two extension methods to the `String` class in `Fraction.scala`
+  - `toFraction` converts a string to a `Fraction`
+  - `evaluateFractionExpression` will evaluate an expression and return a `String` result
+* Illegal input handling isn't very nice
+  - Unknown operators
+  - Non-compliant operands
+  - Division by zero
+* Negative numbers are probably a mess
+
 ## sbt project compiled with Scala 3
 
 ### Usage
