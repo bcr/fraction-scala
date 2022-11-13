@@ -52,6 +52,10 @@ extension (s: String)
 
     def evaluateFractionExpression: String =
         val components = s.split("\\s+")
+
+        if (components.length < 3)
+            return "Illegal input - expected operand operator operand"
+
         val a = components(0).toFraction
         val operator = components(1)
         val b = components(2).toFraction
