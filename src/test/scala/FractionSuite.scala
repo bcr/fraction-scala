@@ -131,5 +131,4 @@ class FractionSuite extends munit.FunSuite {
     val obtained = expression.evaluateFractionExpression
     assertEquals(obtained, expected)
   }
-
 }
