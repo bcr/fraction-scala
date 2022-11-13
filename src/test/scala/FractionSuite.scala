@@ -131,4 +131,11 @@ class FractionSuite extends munit.FunSuite {
     val obtained = expression.evaluateFractionExpression
     assertEquals(obtained, expected)
   }
+
+  test("evaluateFractionExpression handles illegal operators") {
+    val expression = "27 x 3"
+    val expected = "Unknown operator \"x\""
+    val obtained = expression.evaluateFractionExpression
+    assertEquals(obtained, expected)
+  }
 }

@@ -56,10 +56,14 @@ extension (s: String)
         val operator = components(1)
         val b = components(2).toFraction
 
-        var result = operator match
-            case "+" => a + b
-            case "-" => a - b
-            case "*" => a * b
-            case "/" => a / b
+        try
+            var result = operator match
+                case "+" => a + b
+                case "-" => a - b
+                case "*" => a * b
+                case "/" => a / b
+                case _   => throw new IllegalArgumentException(s"Unknown operator \"${operator}\"")
 
-        result.reduce().toMixedNumberString
+            result.reduce().toMixedNumberString
+        catch
+            case e: IllegalArgumentException => return e.getMessage()

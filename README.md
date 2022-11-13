@@ -25,7 +25,6 @@ Example run
   - `toFraction` converts a string to a `Fraction`
   - `evaluateFractionExpression` will evaluate an expression and return a `String` result
 * Illegal input handling isn't very nice
-  - Unknown operators
   - Non-compliant operands
   - Division by zero
 * Negative numbers are probably a mess
