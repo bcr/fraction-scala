@@ -20,6 +20,13 @@ case class Fraction(numerator: Int, denominator: Int):
     def reduce() : Fraction =
         val this_gcf = gcf(numerator, denominator)
         Fraction(numerator / this_gcf, denominator / this_gcf)
+    def toMixedNumberString: String =
+        if (denominator == 1) {
+            return s"${numerator / denominator}"
+        }
+        else {
+            return s"${numerator}/${denominator}"
+        }
 
 // https://docs.scala-lang.org/scala3/reference/contextual/extension-methods.html
 extension (s: String)

@@ -60,4 +60,18 @@ class FractionSuite extends munit.FunSuite {
     val obtained = a.reduce()
     assertEquals(obtained, expected)
   }
+
+  test("toMixedNumberString whole number") {
+    val expected = "1"
+    val a = expected.toFraction
+    val obtained = a.toMixedNumberString
+    assertEquals(obtained, expected)
+  }
+
+  test("toMixedNumberString fraction only") {
+    val expected = "1/2"
+    val a = expected.toFraction
+    val obtained = a.toMixedNumberString
+    assertEquals(obtained, expected)
+  }
 }
