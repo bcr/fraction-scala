@@ -53,4 +53,11 @@ class FractionSuite extends munit.FunSuite {
     val obtained = a - b
     assertEquals(obtained, expected)
   }
+
+  test("can reduce") {
+    val a = Fraction(2, 4)
+    val expected = Fraction(1, 2)
+    val obtained = a.reduce()
+    assertEquals(obtained, expected)
+  }
 }

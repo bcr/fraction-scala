@@ -1,8 +1,25 @@
+private def gcf(a: Int, b: Int) : Int = {
+    var temp = 0
+    var num1 = a
+    var num2 = b
+
+    while(num2 != 0)
+    {
+        temp = num1 % num2
+        num1 = num2
+        num2 = temp
+    }
+    return num1
+}
+
 case class Fraction(numerator: Int, denominator: Int):
     def *(that: Fraction) = Fraction(this.numerator * that.numerator, this.denominator * that.denominator)
     def /(that: Fraction) = Fraction(this.numerator * that.denominator, this.denominator * that.numerator)
     def +(that: Fraction) = Fraction(this.numerator * that.denominator + this.denominator * that.numerator, this.denominator * that.denominator)
     def -(that: Fraction) = Fraction(this.numerator * that.denominator - this.denominator * that.numerator, this.denominator * that.denominator)
+    def reduce() : Fraction =
+        val this_gcf = gcf(numerator, denominator)
+        Fraction(numerator / this_gcf, denominator / this_gcf)
 
 // https://docs.scala-lang.org/scala3/reference/contextual/extension-methods.html
 extension (s: String)
