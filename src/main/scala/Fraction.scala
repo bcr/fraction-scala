@@ -2,6 +2,7 @@ case class Fraction(numerator: Int, denominator: Int):
     def *(that: Fraction) = Fraction(this.numerator * that.numerator, this.denominator * that.denominator)
     def /(that: Fraction) = Fraction(this.numerator * that.denominator, this.denominator * that.numerator)
     def +(that: Fraction) = Fraction(this.numerator * that.denominator + this.denominator * that.numerator, this.denominator * that.denominator)
+    def -(that: Fraction) = Fraction(this.numerator * that.denominator - this.denominator * that.numerator, this.denominator * that.denominator)
 
 // https://docs.scala-lang.org/scala3/reference/contextual/extension-methods.html
 extension (s: String)
