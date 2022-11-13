@@ -152,4 +152,18 @@ class FractionSuite extends munit.FunSuite {
     val obtained = expression.evaluateFractionExpression
     assertEquals(obtained, expected)
   }
+
+  test("evaluateFractionExpression handles bad first operand") {
+    val expression = "mouse * 3"
+    val expected = "Illegal operand For input string: \"mouse\""
+    val obtained = expression.evaluateFractionExpression
+    assertEquals(obtained, expected)
+  }
+
+  test("evaluateFractionExpression handles bad second operand") {
+    val expression = "3 * cat"
+    val expected = "Illegal operand For input string: \"cat\""
+    val obtained = expression.evaluateFractionExpression
+    assertEquals(obtained, expected)
+  }
 }

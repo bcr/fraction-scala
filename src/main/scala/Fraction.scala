@@ -56,11 +56,11 @@ extension (s: String)
         if (components.length < 3)
             return "Illegal input - expected operand operator operand"
 
-        val a = components(0).toFraction
-        val operator = components(1)
-        val b = components(2).toFraction
-
         try
+            val a = components(0).toFraction
+            val operator = components(1)
+            val b = components(2).toFraction
+
             var result = operator match
                 case "+" => a + b
                 case "-" => a - b
@@ -70,5 +70,6 @@ extension (s: String)
 
             result.reduce().toMixedNumberString
         catch
+            case e: NumberFormatException => return s"Illegal operand ${e.getMessage()}"
             case e: IllegalArgumentException => return e.getMessage()
             case e: ArithmeticException => return e.getMessage()

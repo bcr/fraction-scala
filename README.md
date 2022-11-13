@@ -24,8 +24,6 @@ Example run
 * I added two extension methods to the `String` class in `Fraction.scala`
   - `toFraction` converts a string to a `Fraction`
   - `evaluateFractionExpression` will evaluate an expression and return a `String` result
-* Illegal input handling isn't very nice
-  - Non-compliant operands
 * Negative numbers are probably a mess
 
 ## sbt project compiled with Scala 3
