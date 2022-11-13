@@ -53,5 +53,6 @@ extension (s: String)
         var result = operator match
             case "+" => a + b
             case "-" => a - b
+            case "*" => a * b
 
         result.toMixedNumberString
