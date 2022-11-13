@@ -9,4 +9,16 @@ class FractionSuite extends munit.FunSuite {
     val expected = Fraction(1, 1)
     assertEquals(obtained, expected)
   }
+
+  test("toFraction String extension method fraction only") {
+    val obtained = "1/2".toFraction
+    val expected = Fraction(1, 2)
+    assertEquals(obtained, expected)
+  }
+
+  test("toFraction String extension method mixed number") {
+    val obtained = "3_3/4".toFraction
+    val expected = Fraction(15, 4)
+    assertEquals(obtained, expected)
+  }
 }
