@@ -123,4 +123,13 @@ class FractionSuite extends munit.FunSuite {
     val obtained = expression.evaluateFractionExpression
     assertEquals(obtained, expected)
   }
+
+  // Operands and operators shall be separated by one or more spaces.
+  test("more than one space") {
+    val expression = "1/2    *    3_3/4"
+    val expected = "1_7/8"
+    val obtained = expression.evaluateFractionExpression
+    assertEquals(obtained, expected)
+  }
+
 }
