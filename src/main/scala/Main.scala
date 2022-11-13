@@ -1,5 +1,7 @@
-@main def hello: Unit = 
-  println("Hello world!")
-  println(msg)
+import scala.io.StdIn.readLine
 
-def msg = "I was compiled by Scala 3. My daddy is Blake. :)"
+@main def hello: Unit = 
+  while (true)
+    print("? ")
+    val input = readLine()
+    println(s"= ${input.evaluateFractionExpression}")
