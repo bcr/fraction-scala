@@ -19,6 +19,10 @@ case class Fraction(numerator: Int, denominator: Int):
         val this_gcf = gcf(numerator, denominator)
         Fraction(numerator / this_gcf, denominator / this_gcf)
     def toMixedNumberString: String =
+        if (numerator > denominator)
+            val output_whole = numerator / denominator
+            val output_numerator = numerator % denominator
+            return s"${output_whole}_${output_numerator}/${denominator}"
         if (denominator == 1)
             return s"${numerator / denominator}"
         else
