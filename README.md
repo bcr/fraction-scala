@@ -26,7 +26,6 @@ Example run
   - `evaluateFractionExpression` will evaluate an expression and return a `String` result
 * Illegal input handling isn't very nice
   - Non-compliant operands
-  - Division by zero
 * Negative numbers are probably a mess
 
 ## sbt project compiled with Scala 3

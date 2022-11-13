@@ -67,3 +67,4 @@ extension (s: String)
             result.reduce().toMixedNumberString
         catch
             case e: IllegalArgumentException => return e.getMessage()
+            case e: ArithmeticException => return e.getMessage()
