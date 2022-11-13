@@ -88,4 +88,11 @@ class FractionSuite extends munit.FunSuite {
     val obtained = expression.evaluateFractionExpression
     assertEquals(obtained, expected)
   }
+
+  test("evaluateFractionExpression works with subtraction") {
+    val expression = "1 - 1"
+    val expected = "0"
+    val obtained = expression.evaluateFractionExpression
+    assertEquals(obtained, expected)
+  }
 }
