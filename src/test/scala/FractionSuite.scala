@@ -37,4 +37,12 @@ class FractionSuite extends munit.FunSuite {
     val obtained = a / b
     assertEquals(obtained, expected)
   }
+
+  test("can add") {
+    val a = Fraction(1, 2)
+    val b = Fraction(3, 4)
+    val expected = Fraction(10, 8)
+    val obtained = a + b
+    assertEquals(obtained, expected)
+  }
 }
