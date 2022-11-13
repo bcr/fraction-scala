@@ -43,3 +43,14 @@ extension (s: String)
             val denominator = fraction_pieces(1).toInt
             return Fraction(numerator + whole * denominator, denominator)
         return Fraction(remainder.toInt, 1)
+
+    def evaluateFractionExpression: String =
+        val components = s.split("\\s+")
+        val a = components(0).toFraction
+        val operator = components(1)
+        val b = components(2).toFraction
+
+        var result = operator match
+            case "+" => a + b
+
+        result.toMixedNumberString
