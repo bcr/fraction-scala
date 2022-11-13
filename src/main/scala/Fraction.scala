@@ -54,5 +54,6 @@ extension (s: String)
             case "+" => a + b
             case "-" => a - b
             case "*" => a * b
+            case "/" => a / b
 
-        result.toMixedNumberString
+        result.reduce().toMixedNumberString
