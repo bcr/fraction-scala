@@ -1,7 +1,11 @@
 import scala.io.StdIn.readLine
 
 @main def hello: Unit = 
-  while (true)
+  var running = true
+  while (running)
     print("? ")
     val input = readLine()
-    println(s"= ${input.evaluateFractionExpression}")
+    if (input.length() > 0)
+      println(s"= ${input.evaluateFractionExpression}")
+    else
+      running = false
