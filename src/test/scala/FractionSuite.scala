@@ -21,4 +21,12 @@ class FractionSuite extends munit.FunSuite {
     val expected = Fraction(15, 4)
     assertEquals(obtained, expected)
   }
+
+  test("can multiply") {
+    val a = Fraction(1, 2)
+    val b = Fraction(3, 4)
+    val expected = Fraction(3, 8)
+    val obtained = a * b
+    assertEquals(obtained, expected)
+  }
 }
