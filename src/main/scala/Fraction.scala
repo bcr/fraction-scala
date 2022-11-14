@@ -21,14 +21,18 @@ case class Fraction(numerator: Int, denominator: Int):
         Fraction(numerator / this_gcf, denominator / this_gcf)
 
     def toMixedNumberString: String =
+        val negative = numerator < 0
+        val sign = if (negative) "-" else ""
+        val absnumerator = numerator.abs
+
         if (denominator == 1)
-            return s"${numerator / denominator}"
-        if (numerator > denominator)
-            val output_whole = numerator / denominator
-            val output_numerator = numerator % denominator
-            return s"${output_whole}_${output_numerator}/${denominator}"
+            return s"${sign}${absnumerator / denominator}"
+        if (absnumerator > denominator)
+            val output_whole = absnumerator / denominator
+            val output_numerator = absnumerator % denominator
+            return s"${sign}${output_whole}_${output_numerator}/${denominator}"
         else
-            return s"${numerator}/${denominator}"
+            return s"${sign}${absnumerator}/${denominator}"
 
 // https://docs.scala-lang.org/scala3/reference/contextual/extension-methods.html
 extension (s: String)

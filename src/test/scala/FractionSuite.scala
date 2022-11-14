@@ -100,6 +100,27 @@ class FractionSuite extends munit.FunSuite {
     assertEquals(obtained, expected)
   }
 
+  test("toMixedNumberString negative whole number") {
+    val expected = "-2"
+    val a = expected.toFraction
+    val obtained = a.toMixedNumberString
+    assertEquals(obtained, expected)
+  }
+
+  test("toMixedNumberString negative fraction only") {
+    val expected = "-1/2"
+    val a = expected.toFraction
+    val obtained = a.toMixedNumberString
+    assertEquals(obtained, expected)
+  }
+
+  test("toMixedNumberString negative mixed number") {
+    val expected = "-1_7/8"
+    val a = expected.toFraction
+    val obtained = a.toMixedNumberString
+    assertEquals(obtained, expected)
+  }
+
   test("evaluateFractionExpression works with addition") {
     val expression = "1 + 1"
     val expected = "2"
